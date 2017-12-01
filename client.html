@@ -223,7 +223,7 @@
 
         currentTopic = e.word;
         nextTopicData = fetchOnKeyword(currentTopic)
-        nextTopicData.then(function(e){next(e);ready.setTrue();spinner.setReady()});
+        nextTopicData.then(function(e){nextTopic();ready.setTrue();spinner.setReady()});
 
       })
     }
