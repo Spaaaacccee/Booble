@@ -221,8 +221,11 @@
       randomWord(function(e) {
         currentTopic = e.word;
         nextTopic(function() {
-          ready.setTrue();
-          nextTopicData.then(draw)
+
+          nextTopicData.then(function(e) {
+            draw(e);
+            ready.setTrue();
+          })
           if (typeof callback !== "undefined") callback();
         });
       })
