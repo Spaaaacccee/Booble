@@ -20,6 +20,7 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/client.html');
 })
 
+
 app.post('/fetch', function(req, res) {
   console.log(req.body);
   req.body = req.body == undefined
