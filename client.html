@@ -36,7 +36,7 @@
     var currentTopic = "Google";
     var nextTopicData;
     ready = new(function() {
-      var _ready = false;
+      var _ready = true;
       var cache;
       this.setTrue = function() {
         _ready = true;
@@ -211,23 +211,20 @@
             })
           })
         } catch (e) {
-          currentTopic = "Google";
-          nextTopic();
+          recover();
         }
       });
     }
 
     function recover(callback) {
+      console.log("recover!")
+      spinner.setNotReady()
       randomWord(function(e) {
-        currentTopic = e.word;
-        nextTopic(function() {
 
-          nextTopicData.then(function(e) {
-            draw(e);
-            ready.setTrue();
-          })
-          if (typeof callback !== "undefined") callback();
-        });
+        currentTopic = e.word;
+        nextTopicData = fetchOnKeyword(currentTopic)
+        nextTopicData.then(function(e){next(e);ready.setTrue();spinner.setReady()});
+
       })
     }
 
