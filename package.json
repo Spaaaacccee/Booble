@@ -1,0 +1,27 @@
+{
+  "name": "thing",
+  "version": "1.0.0",
+  "description": "amazing game",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chance": "^1.0.12",
+    "express": "^4.16.2",
+    "google-trends-api": "^4.3.0",
+    "random-words": "0.0.1",
+    "spinkit": "^1.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.evennode.com:0c6bd4444289e9499ad8c804dbd3348f.git"
+  },
+  "keywords": [
+    "amazing"
+  ],
+  "author": "me",
+  "license": "ISC"
+}
