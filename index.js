@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 //support parsing of application/x-www-form-urlencoded post data
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.listen(3000)
+app.listen(8080)
 
 app.use(express.static(__dirname))
 
