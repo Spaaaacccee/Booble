@@ -104,7 +104,7 @@ function drawSreenGroupObject(screenGroupObj) {
         })
         setTimeout(function() {
           drawOne();
-        }, 2000)
+        }, 1000)
       }
 
       function onCorrect(s) {
