@@ -16,7 +16,7 @@
 
   <div id="flex">
     <img src="./res/googlelogo.png" width="80" style="margin-bottom:20px">
-    <h1  class="animated">
+    <h1 class="animated">
   Which of the two countries search for <b id="keyword">this keyword</b> more?
 </h1>
     <br/>
@@ -97,9 +97,16 @@
     }
 
     .animated {
-      animation-duration: 0.5s
+      animation-duration: 0.5s;
     }
 
+    .animated.fadeInUp {
+      animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1)
+    }
+
+    .animated.fadeOutUp {
+      animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    }
   </style>
 </body>
 

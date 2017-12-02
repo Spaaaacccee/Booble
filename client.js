@@ -79,6 +79,9 @@ function screenGroupObject(topicObj) {
         self.ready = true;
         e.interestByRegion.then(function(geoMap) {
           self.rightAnswer = geoMap[0].geoName;
+          if(geoMap.length==1 && geoMap[0].geoName !== "Cambodia"){
+             geoMap.push((geoMap[0].geoName == "Cambodia")? {geoName:"Sri Lanka"}:{geoName:"Cambodia"})
+          }
           self.wrongAnswer = geoMap[getRandomInt(1, geoMap.length - 1)].geoName;
         })
         res(self);
@@ -194,7 +197,12 @@ var loadCycle = new(function() {
   }
   function load() {
     if (self.started) {
-      loadOne().then(load)
+      if(globals.queuedTopics.length - globals.queueIndex < 4) {
+        loadOne().then(load)
+      } else {
+        console.log("Exeeded 5 items, trying again in 10 seconds")
+        setTimeout(load,10000);
+      }
     }
   }
 
