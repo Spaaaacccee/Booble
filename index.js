@@ -35,7 +35,7 @@ app.post('/fetch', function(req, res) {
     break;
     case "trending":
     //if(chance.integer({min: 1, max: 4}) == 1) req.body.data.topic = randomWords();
-      googleTrendsApi.relatedQueries({keyword: req.body.data.topic}).then(function(e) {
+      googleTrendsApi.relatedTopics({keyword: req.body.data.topic}).then(function(e) {
         res.send(e);
       })
       return;
